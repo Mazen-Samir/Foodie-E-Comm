@@ -12,14 +12,13 @@ body {
   background: #f7f7f8;
   color: #222;
 }
-main
-{
+main {
   min-height: 100vh;
 }
-.container{
+.container {
   max-width: 90%;
   margin: auto;
-  padding: 10px 15px; 
+  padding: 10px 15px;
 }
 
 .navbar {
@@ -41,7 +40,8 @@ main
   align-items: center;
 }
 
-.logo, .logo a {
+.logo,
+.logo a {
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
@@ -50,8 +50,6 @@ main
   align-items: center;
   gap: 10px;
 }
-
-
 
 .nav-links {
   display: flex;
@@ -186,7 +184,6 @@ select:focus {
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px dashed #eee;
-
 }
 .small {
   font-size: 13px;
@@ -202,7 +199,6 @@ select:focus {
   align-items: center;
   justify-content: center;
   padding: 20px;
-
 }
 .modal .content {
   width: 100%;
@@ -229,13 +225,6 @@ footer {
     grid-template-columns: 1fr;
   }
   .aside {
-    position:static;
+    position: static;
   }
 }
-
-
-
-
-
-
-
