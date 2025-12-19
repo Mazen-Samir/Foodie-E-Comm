@@ -1,88 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="CSS/style.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="CSS/style.css" />
 
-  <title>Foodie — Restaurant Ordering (Fixed)</title>
-</head>
-<body>
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="images/favicon.png" alt="logo" style="border-radius:8px;height:44px;width:44px;object-fit:cover">
-        <a href="#" class="">Foodie</a>
+    <title>Foodie — Restaurant Ordering (Fixed)</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="images/favicon.png"
+            alt="logo"
+            style="
+              border-radius: 8px;
+              height: 44px;
+              width: 44px;
+              object-fit: cover;
+            "
+          />
+          <a href="#" class="">Foodie</a>
+        </div>
+        <div class="nav-links">
+          <a href="#" disabled onclick="showLogin()" id="navLogin">Login</a>
+          <a href="#" onclick="openOrders()"> My Orders</a>
+          <a href="#" onclick="showRegister()" id="navRegister">Sign up</a>
+          <a href="#" onclick="showAdmin()">Admin</a>
+          <a href="#" onclick="openCart()"
+            >Cart (<span id="cartCount">0</span>)</a
+          >
+        </div>
       </div>
-      <div class="nav-links">
-        <a href="#" disabled onclick="showLogin()" id="navLogin">Login</a> 
-        <a href="#" onclick="openOrders()"> My Orders</a> 
-      <a href="#" onclick="showRegister()" id="navRegister">Sign up</a> 
-      <a href="#" onclick="showAdmin()">Admin</a> 
-      <a href="#" onclick="openCart()">Cart (<span id="cartCount">0</span>)</a> 
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="container">
-    <div class="grid">
-      <div class="menu">
-        <div class="hero">
-          <div class="search">
-            <input id="search" placeholder="Search dishes or restaurants..." oninput="renderMenu()">
+    <main class="container">
+      <div class="grid">
+        <div class="menu">
+          <div class="hero">
+            <div class="search">
+              <input
+                id="search"
+                placeholder="Search dishes or restaurants..."
+                oninput="renderMenu()"
+              />
+            </div>
+            <div class="filter" style="width: 220px">
+              <select id="category" onchange="renderMenu()">
+                <option value="all">All categories</option>
+              </select>
+            </div>
           </div>
-          <div class="filter" style="width:220px">
-            <select id="category" onchange="renderMenu()">
-              <option value="all">All categories</option>
-            </select>
+          <h2>Menu</h2>
+          <div class="menu-list" id="menuList"></div>
+        </div>
+
+        <aside class="aside">
+          <div class="cart">
+            <h3>Your Cart</h3>
+            <div class="cart-list" id="cartList"></div>
+            <div style="margin-top: 12px; display: flex; gap: 8px">
+              <button class="btn" onclick="openCart()">View Cart</button>
+              <button class="btn secondary" onclick="clearCart()">Clear</button>
+              <button class="btn secondary" onclick="openCheckout()">
+                Checkout
+              </button>
+            </div>
+          </div>
+
+          <div style="height: 12px"></div>
+          <div class="cart small">
+            <h4>Order quick tips</h4>
+            <ul style="padding-left: 18px; margin: 8px 0 0">
+              <li>Register to save orders</li>
+              <li>Cancel within 5 minutes after placing</li>
+              <li>Admin can add menu items</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div class="modal" id="cartModal">
+      <div class="content" id="cartModalContent"></div>
+    </div>
+    <div class="modal" id="dishModal">
+      <div class="content" id="dishModalContent"></div>
+    </div>
+    <div class="modal" id="ordersModal">
+      <div class="content" id="ordersModalContent"></div>
+    </div>
+    <div class="modal" id="adminModal">
+      <div class="content" id="adminModalContent"></div>
+    </div>
+    <div class="modal" id="checkoutModal">
+      <div class="content" id="checkoutContent"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="box text-center text-white pt-2">
+            <p>Copy Right 2025 © By Mazen All Rights Reserved</p>
           </div>
         </div>
-        <h2>Menu</h2>
-        <div class="menu-list" id="menuList"></div>
       </div>
+    </footer>
 
-      <aside class="aside">
-        <div class="cart">
-          <h3>Your Cart</h3>
-          <div class="cart-list" id="cartList"></div>
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <button class="btn" onclick="openCart()">View Cart</button>
-            <button class="btn secondary" onclick="clearCart()">Clear</button>
-            <button class="btn secondary" onclick="openCheckout()">Checkout</button>
-          </div>
-        </div>
-
-        <div style="height:12px"></div>
-        <div class="cart small">
-          <h4>Order quick tips</h4>
-          <ul style="padding-left:18px;margin:8px 0 0">
-            <li>Register to save orders</li>
-            <li>Cancel within 5 minutes after placing</li>
-            <li>Admin can add menu items</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <div class="modal" id="cartModal"><div class="content" id="cartModalContent"></div></div> 
-  <div class="modal" id="dishModal"><div class="content" id="dishModalContent"></div></div> 
-  <div class="modal" id="ordersModal"><div class="content" id="ordersModalContent"></div></div> 
-  <div class="modal" id="adminModal"><div class="content" id="adminModalContent"></div></div> 
-  <div class="modal" id="checkoutModal"><div class="content" id="checkoutContent"></div></div> 
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="box text-center text-white pt-2">
-          <p>Copy Right 2025 © By Mazen All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="JS/main.js">
-  // ---------- Sample dishes (food & restaurants) ----------
-  </script>
-</body>
+    <script src="JS/main.js">
+      // ---------- Sample dishes (food & restaurants) ----------
+    </script>
+  </body>
 </html>
