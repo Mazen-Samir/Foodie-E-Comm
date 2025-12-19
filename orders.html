@@ -1,46 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Orders - Foodie</title>
-  <link rel="stylesheet" href="CSS/styleOrders.css">
-</head>
-<body>
-  <!-- Optional: Add a navigation bar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="images/favicon.png" alt="logo" style="border-radius:8px;height:44px;width:44px;object-fit:cover">
-        <a href="#" onclick="openHome()">Foodie</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Orders - Foodie</title>
+    <link rel="stylesheet" href="CSS/styleOrders.css" />
+  </head>
+  <body>
+    <!-- Optional: Add a navigation bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="images/favicon.png"
+            alt="logo"
+            style="
+              border-radius: 8px;
+              height: 44px;
+              width: 44px;
+              object-fit: cover;
+            "
+          />
+          <a href="#" onclick="openHome()">Foodie</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="container">
-    <div class="header-section">
-      <h2 class="orderHeader" id="orderHeaderId">
-        <i class="fas fa-clipboard-list"></i> 
-        My Orders
-      </h2>
-    </div>
-    
-    <div class="orders-container" id="ordersListId">
-      <!-- Orders will be dynamically inserted here -->
-      
-      <!-- Empty state (remove this div when orders exist) -->
-      <div class="empty-state" id="emptyStateId">
-        <i class="fas fa-shopping-basket"></i>
-        <h3>No orders yet</h3>
-        <p>Your delicious journey hasn't started yet. Place your first order!</p>
-        <a href="index.html" class="btn">Browse Menu</a>
+    <div class="container">
+      <div class="header-section">
+        <h2 class="orderHeader" id="orderHeaderId">
+          <i class="fas fa-clipboard-list"></i>
+          My Orders
+        </h2>
+      </div>
+
+      <div class="orders-container" id="ordersListId">
+        <!-- Orders will be dynamically inserted here -->
+
+        <!-- Empty state (remove this div when orders exist) -->
+        <div class="empty-state" id="emptyStateId">
+          <i class="fas fa-shopping-basket"></i>
+          <h3>No orders yet</h3>
+          <p>
+            Your delicious journey hasn't started yet. Place your first order!
+          </p>
+          <a href="index.html" class="btn">Browse Menu</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="modal" id="ordersModal"><div class="content" id="ordersModalContent"></div></div>
-  <div class="modal" id="adminModal"><div class="content" id="adminModalContent"></div></div>
-  <script src="js/main.js"></script>
-  <script>renderOrdersPage();</script>
-</body>
+    <div class="modal" id="ordersModal">
+      <div class="content" id="ordersModalContent"></div>
+    </div>
+    <div class="modal" id="adminModal">
+      <div class="content" id="adminModalContent"></div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+      renderOrdersPage();
+    </script>
+  </body>
 </html>
