@@ -92,7 +92,7 @@ function populateCategories() {
 
 // render menu
 function renderMenu() {
-  const q = (
+  const q = ( 
     (document.getElementById("search") &&
       document.getElementById("search").value) ||
     ""
