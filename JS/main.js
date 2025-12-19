@@ -90,9 +90,9 @@ function populateCategories() {
   });
 }
 
-// render menu 
+// render menu
 function renderMenu() {
-  const q = ( 
+  const q = (
     (document.getElementById("search") &&
       document.getElementById("search").value) ||
     ""
@@ -696,23 +696,22 @@ function openHome() {
   window.location.href = "index.html";
 }
 
-
 function switchTab(tabName) {
   // Update tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.remove('active');
+  document.querySelectorAll(".tab-btn").forEach((btn) => {
+    btn.classList.remove("active");
   });
-  document.querySelectorAll('.auth-form').forEach(form => {
-    form.classList.remove('active');
+  document.querySelectorAll(".auth-form").forEach((form) => {
+    form.classList.remove("active");
   });
-  
+
   // Activate selected tab
-  if (tabName === 'login') {
-    document.querySelector('.tab-btn:first-child').classList.add('active');
-    document.getElementById('login-form').classList.add('active');
+  if (tabName === "login") {
+    document.querySelector(".tab-btn:first-child").classList.add("active");
+    document.getElementById("login-form").classList.add("active");
   } else {
-    document.querySelector('.tab-btn:last-child').classList.add('active');
-    document.getElementById('register-form').classList.add('active');
+    document.querySelector(".tab-btn:last-child").classList.add("active");
+    document.getElementById("register-form").classList.add("active");
   }
 }
 
@@ -728,5 +727,3 @@ document.querySelectorAll(".modal").forEach((m) =>
     if (e.target === m) m.style.display = "none";
   })
 );
-
-
