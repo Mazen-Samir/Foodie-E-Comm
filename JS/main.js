@@ -500,6 +500,7 @@ function adminLogin() {
   if (u === adminCred.user && p === adminCred.pass) adminAuth(true);
   else alert("Invalid admin");
 }
+
 function adminAuth(ok) {
   if (!ok) return;
   const area = document.getElementById("adminArea");
@@ -520,6 +521,7 @@ function adminAuth(ok) {
     <div id='adminList' style='margin-top:12px'></div>`;
   renderAdminList();
 }
+
 function addDish() {
   const n =
     (document.getElementById("newName") &&
@@ -553,6 +555,7 @@ function addDish() {
   renderAdminList();
   alert("Dish added");
 }
+
 function renderAdminList() {
   const el = document.getElementById("adminList");
   if (!el) return;
@@ -567,6 +570,7 @@ function renderAdminList() {
     )
     .join("");
 }
+
 function removeDish(id) {
   dishes = dishes.filter((d) => d.id !== id);
   localStorage.setItem("dishes", JSON.stringify(dishes));
@@ -580,6 +584,7 @@ function openModal(id) {
   const el = document.getElementById(id);
   if (el) el.style.display = "flex";
 }
+
 function closeModal(id) {
   const el = document.getElementById(id);
   if (el) el.style.display = "none";
