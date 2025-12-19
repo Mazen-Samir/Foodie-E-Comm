@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/bg-foodie.jpg') center/cover no-repeat;
+  background: url("../images/bg-foodie.jpg") center/cover no-repeat;
   filter: blur(8px) brightness(0.7);
   z-index: -1;
 }
@@ -349,8 +349,8 @@ body {
 }
 
 .social-btn-compact.facebook:hover {
-  border-color: #4267B2;
-  color: #4267B2;
+  border-color: #4267b2;
+  color: #4267b2;
   background: #f0f8ff;
 }
 
@@ -399,7 +399,6 @@ body {
 .terms-compact a:hover {
   text-decoration: underline;
 }
-
 
 .auth-footer-compact p {
   font-size: 0.75rem;
@@ -461,8 +460,14 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -471,12 +476,12 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .auth-card-compact {
     width: 100%;
     max-width: 480px;
   }
-  
+
   .quick-info {
     width: 100%;
     max-width: 480px;
@@ -487,19 +492,19 @@ body {
   body {
     padding: 15px;
   }
-  
+
   .auth-card-compact {
     padding: 20px;
   }
-  
+
   .brand-title-compact {
     font-size: 1.7rem;
   }
-  
+
   .form-header h2 {
     font-size: 1.3rem;
   }
-  
+
   .form-options-compact {
     flex-direction: column;
     align-items: flex-start;
@@ -534,7 +539,9 @@ body {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Error/Success States */
