@@ -77,6 +77,7 @@ let currentUser = localStorage.getItem("currentUser") || null;
 // admin simple credential (demo)
 const adminCred = { user: "admin", pass: "admin123" };
 
+
 // populate categories
 function populateCategories() {
   const cat = ["all", ...new Set(dishes.map((d) => d.category))];
@@ -728,3 +729,36 @@ document.querySelectorAll(".modal").forEach((m) =>
     if (e.target === m) m.style.display = "none";
   })
 );
+
+// ===================================== Weather API =============================================
+
+async function getWeatherToday() {
+  try {
+    let response = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=Cairo&days=3`
+    );
+    
+    if (response.ok && response.status != 400) {
+      let city = await response.json();
+      
+      // Update compact weather widget only
+      document.getElementById("weatherTemp").textContent = `${city.current.temp_c}°C`;
+      document.getElementById("weatherLocation").textContent = city.location.name;
+    
+      console.log("Weather data loaded successfully");
+    }
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    // Show fallback data
+    document.getElementById("weatherLocation").textContent = "Weather Unavailable";
+    document.getElementById("weatherTemp").textContent = "--°C";
+  }
+}
+
+// Call weather function on page load
+document.addEventListener('DOMContentLoaded', function() {
+  getWeatherToday();
+  
+  // Refresh weather every 10 minutes
+  setInterval(getWeatherToday, 10 * 60 * 1000);
+});
